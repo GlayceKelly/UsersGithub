@@ -12,13 +12,13 @@ struct Users: Codable {
     let login: String
     let avatar_url: String
     let repos_url: String
-    let email: String
+    let email: String?
     let followers: Int
     let following: Int
 }
 
 struct Repos: Codable {
-    let name: String
-    let language: String
-    let description: String
+    let name: String?
+    let language: String?
+    let description: String?
 }

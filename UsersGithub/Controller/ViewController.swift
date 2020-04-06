@@ -9,12 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    //Controles da view
+    @IBOutlet weak var tfUserName: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //Fecha o teclado ao sair da tela
+        tfUserName.resignFirstResponder()
 
+        //Envia o conteudo da textfield para a proxima tela
+        let viewUserViewController = segue.destination as! UserViewController
+        viewUserViewController.userName = tfUserName.text
+    }
 }
-
